@@ -1,0 +1,65 @@
+country_event = { #The Sejm Diet of [GetYear]
+	id = my_custom_event.3
+	title = none
+	desc = none
+	picture = HRE_eventPicture
+    fire_only_once = yes
+
+trigger = {	
+    tag = BUR
+	ai = yes
+   NOT = { is_year = 1445 }
+}
+
+mean_time_to_happen = {
+    days = 1
+}
+
+	option = { 
+		name = none
+		trigger = {
+		}
+		add_opinion = {
+			who = FLA
+			modifier = matrox_opinion
+		}
+		add_opinion = {
+			who = BRB
+			modifier = matrox_opinion
+		}
+		add_opinion = {
+			who = LİE
+			modifier = matrox_opinion
+		}
+		add_opinion = {
+			who = NEV
+			modifier = matrox_opinion
+		}
+		FLA = {
+			add_opinion = {
+				who = BUR
+				modifier = matrox_opinion
+			}
+		}
+		BRB = {
+			add_opinion = {
+				who = BUR
+				modifier = matrox_opinion
+			}
+		}
+		LİE = {
+			add_opinion = {
+				who = BUR
+				modifier = matrox_opinion
+			}
+		}
+		NEV = {
+			add_opinion = {
+				who = BUR
+				modifier = matrox_opinion
+			}
+		}
+	}
+
+
+}

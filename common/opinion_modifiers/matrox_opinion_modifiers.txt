@@ -1,0 +1,3 @@
+matrox_opinion = {
+	opinion = -200
+}

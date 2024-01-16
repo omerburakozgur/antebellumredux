@@ -1,0 +1,11 @@
+home_node = {
+	potential = {
+	ai = no
+		}
+	
+
+	trigger = {
+	
+	}
+	reduced_trade_penalty_on_non_main_tradenode = 0.25
+}

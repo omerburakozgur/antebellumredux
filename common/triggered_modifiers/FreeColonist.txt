@@ -1,0 +1,19 @@
+jap_aspirations = {
+    potential = {
+	OR = {
+		ai = no
+		}
+	}
+    
+			
+	trigger = {
+	    ai = no
+        adm_tech = 6
+	}
+
+	range = 0.5
+	colonists = 2
+	global_colonial_growth = 20
+	may_explore = yes
+	native_uprising_chance = -2
+}
