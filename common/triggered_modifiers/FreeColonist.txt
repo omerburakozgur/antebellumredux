@@ -12,7 +12,7 @@ jap_aspirations = {
 	}
 
 	range = 0.5
-	colonists = 2
+	colonists = 1
 	global_colonial_growth = 20
 	may_explore = yes
 	native_uprising_chance = -2

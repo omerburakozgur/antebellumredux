@@ -935,7 +935,7 @@ exploration_ideas = {
 		naval_attrition = -0.1
 	}
 	colonial_ventures = {
-		colonists = 1
+		colonists = 2
 	}
 	overseas_exploration = {
 		range = 0.5
@@ -1388,7 +1388,7 @@ expansion_ideas = {
 		merchants = 1
 	}
 	faster_colonists = {
-		global_colonial_growth = 30
+		global_colonial_growth = 20
 	}
 	vice_roys  = {
 		global_tariffs = 0.10

@@ -6,6 +6,9 @@ religion = catholic
 technology_group = western
 historical_friend = LIV
 historical_rival = POL
+historical_rival = WOL
+historical_rival = DAN
+
 capital = 1841	# Marienburg
 add_army_professionalism = 0.1
 
@@ -55,7 +58,7 @@ change_estate_land_share = {
 
 1413.1.1 = {
 	monarch = {
-		name = "Michael Küchmeister"
+		name = "Michael Kï¿½chmeister"
 		birth_date = 1365.1.1
 		adm = 2
 		dip = 1
@@ -97,7 +100,7 @@ change_estate_land_share = {
 	}
 }
 
-1466.10.19 = { capital = 41 government_rank = 1 } # Königsberg
+1466.10.19 = { capital = 41 government_rank = 1 } # Kï¿½nigsberg
 
 1467.4.5 = {
 	monarch = {

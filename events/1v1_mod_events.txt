@@ -1,0 +1,621 @@
+namespace = one_v_one_mod
+
+country_event = {
+	id = one_v_one_mod.1
+	title = none
+	desc = none
+	picture = none
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_owned_province = { limit = { units_in_province = 1 } kill_units = { who = owner } }
+		define_ruler = { age = 33 ADM = 0 DIP = 0 MIL = 0 claim = 100 }
+		add_ruler_personality = immortal_personality
+		add_ruler_personality = just_personality
+		add_ruler_personality = kind_hearted_personality
+		add_country_modifier = { name = mwg_braindead duration = -1 }
+		while = { limit = { adm_power = 0 } add_adm_power = -100 }
+		while = { limit = { dip_power = 0 } add_dip_power = -100 }
+		while = { limit = { mil_power = 0 } add_mil_power = -100 }
+		if = {
+			limit = { is_year = 1479 NOT = { is_year = 1480 } }
+			IGE = {
+				country_event = { id = one_v_one_mod.2 }
+				country_event = { id = one_v_one_mod.41 }
+			}
+			IVE = {
+				country_event = { id = one_v_one_mod.2 }
+				country_event = { id = one_v_one_mod.41 }
+			}
+		}
+		if = {
+			limit = { is_year = 1516 NOT = { is_year = 1517 } }
+			MTU = {
+				country_event = { id = one_v_one_mod.2 }
+				country_event = { id = one_v_one_mod.42 }
+			}
+			MMM = {
+				country_event = { id = one_v_one_mod.2 }
+				country_event = { id = one_v_one_mod.42 }
+			}
+		}
+		if = {
+			limit = { is_year = 1583 NOT = { is_year = 1584 } }
+			IMU = { country_event = { id = one_v_one_mod.2 } }
+			IDC = { country_event = { id = one_v_one_mod.2 } }
+		}
+		if = {
+			limit = { is_year = 1635 NOT = { is_year = 1636 } }
+			WFR = { country_event = { id = one_v_one_mod.2 } }
+			WSP = { country_event = { id = one_v_one_mod.2 } }
+		}
+		if = {
+			limit = { is_year = 1745 NOT = { is_year = 1746 } }
+			GPR = { country_event = { id = one_v_one_mod.2 } }
+			GAU = { country_event = { id = one_v_one_mod.2 } }
+		}
+	}
+	option = { }
+}
+country_event = {
+	id = one_v_one_mod.2
+	title = none
+	desc = none
+	picture = none
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { OR = { tag = IGE tag = IVE } }
+			discover_ige_v_ive_provinces = yes
+			while = { limit = { NOT = { treasury = 7000 } } add_treasury = 7000 }
+			while = { limit = { treasury = 7001 } add_treasury = -1 }
+			while = { limit = { NOT = { prestige = 50 } } add_prestige = 1 }
+			while = { limit = { prestige = 51 } add_prestige = -1 }
+			while = { limit = { NOT = { army_tradition = 40 } } add_army_tradition = 1 }
+			while = { limit = { army_tradition = 41 } add_army_tradition = -1 }
+			while = { limit = { NOT = { manpower = 80 } } add_manpower = 1 }
+			while = { limit = { manpower = 81 } add_manpower = -1 }
+			while = { limit = { NOT = { sailors = 5000 } } add_sailors = 100 }
+			while = { limit = { sailors = 5100 } add_sailors = -100 }
+			add_adm_power = 174
+			add_dip_power = 174
+			add_mil_power = 174
+		}
+		if = {
+			limit = { OR = { tag = MTU tag = MMM } }
+			discover_mtu_v_mmm_provinces = yes
+			while = { limit = { NOT = { treasury = 12000 } } add_treasury = 12000 }
+			while = { limit = { treasury = 12001 } add_treasury = -1 }
+			while = { limit = { NOT = { prestige = 50 } } add_prestige = 1 }
+			while = { limit = { prestige = 51 } add_prestige = -1 }
+			while = { limit = { NOT = { army_tradition = 50 } } add_army_tradition = 1 }
+			while = { limit = { army_tradition = 51 } add_army_tradition = -1 }
+			while = { limit = { NOT = { manpower = 220 } } add_manpower = 220 }
+			while = { limit = { manpower = 221 } add_manpower = -1 }
+			while = { limit = { NOT = { sailors = 8000 } } add_sailors = 100 }
+			while = { limit = { sailors = 8100 } add_sailors = -100 }
+			add_adm_power = 174
+			add_dip_power = 174
+			add_mil_power = 174
+		}
+		if = {
+			limit = { OR = { tag = IMU tag = IDC } }
+			discover_imu_v_idc_provinces = yes
+			while = { limit = { NOT = { treasury = 3000 } } add_treasury = 1 }
+			while = { limit = { treasury = 3001 } add_treasury = -1 }
+			while = { limit = { NOT = { prestige = 50 } } add_prestige = 1 }
+			while = { limit = { prestige = 51 } add_prestige = -1 }
+			while = { limit = { NOT = { army_tradition = 70 } } add_army_tradition = 1 }
+			while = { limit = { army_tradition = 71 } add_army_tradition = -1 }
+		}
+		if = {
+			limit = { OR = { tag = WFR tag = WSP } }
+			discover_wfr_v_wsp_provinces = yes
+			while = { limit = { NOT = { treasury = 3400 } } add_treasury = 1 }
+			while = { limit = { treasury = 3401 } add_treasury = -1 }
+			while = { limit = { NOT = { prestige = 50 } } add_prestige = 1 }
+			while = { limit = { prestige = 51 } add_prestige = -1 }
+			while = { limit = { NOT = { army_tradition = 80 } } add_army_tradition = 1 }
+			while = { limit = { army_tradition = 81 } add_army_tradition = -1 }
+		}
+		if = {
+			limit = { OR = { tag = GPR tag = GAU } }
+			discover_gpr_v_gau_provinces = yes
+			while = { limit = { NOT = { treasury = 4000 } } add_treasury = 1 }
+			while = { limit = { treasury = 4001 } add_treasury = -1 }
+			while = { limit = { NOT = { prestige = 50 } } add_prestige = 1 }
+			while = { limit = { prestige = 51 } add_prestige = -1 }
+			while = { limit = { NOT = { army_tradition = 90 } } add_army_tradition = 1 }
+			while = { limit = { army_tradition = 91 } add_army_tradition = -1 }
+		}
+		# To reset the national ideas.
+		add_idea_group = one_v_one_filler_ideas
+		remove_idea_group = one_v_one_filler_ideas
+	}
+	option = { }
+}
+###################
+###################
+# Nation banning:
+country_event = {
+	id = one_v_one_mod.3
+	title = one_v_one_mod.3.t
+	desc = one_v_one_mod.3.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	# West Italy:
+	option = {
+		name = one_v_one_mod.3.ige.a
+		trigger = { tag = IGE }
+		set_global_flag = ige_ban_ivv_flag
+		set_global_flag = ige_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ige.b
+		trigger = { tag = IGE }
+		set_global_flag = ige_ban_ivf_flag
+		set_global_flag = ige_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ige.c
+		trigger = { tag = IGE }
+		set_global_flag = ige_ban_ivt_flag
+		set_global_flag = ige_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ige.e
+		trigger = { tag = IGE }
+		set_global_flag = ige_ban_ivd_flag
+		set_global_flag = ige_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	# East Italy:
+	option = {
+		name = one_v_one_mod.3.ive.a
+		trigger = { tag = IVE }
+		set_global_flag = ive_ban_igs_flag
+		set_global_flag = ive_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ive.b
+		trigger = { tag = IVE }
+		set_global_flag = ive_ban_igl_flag
+		set_global_flag = ive_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ive.c
+		trigger = { tag = IVE }
+		set_global_flag = ive_ban_igt_flag
+		set_global_flag = ive_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.ive.e
+		trigger = { tag = IVE }
+		set_global_flag = ive_ban_igp_flag
+		set_global_flag = ive_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	# North Levant:
+	option = {
+		name = one_v_one_mod.3.mtu.a
+		trigger = { tag = MTU }
+		set_global_flag = mtu_ban_mmn_flag
+		set_global_flag = mtu_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mtu.b
+		trigger = { tag = MTU }
+		set_global_flag = mtu_ban_mme_flag
+		set_global_flag = mtu_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mtu.c
+		trigger = { tag = MTU }
+		set_global_flag = mtu_ban_mmr_flag
+		set_global_flag = mtu_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mtu.e
+		trigger = { tag = MTU }
+		set_global_flag = mtu_ban_mmj_flag
+		set_global_flag = mtu_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	# South Levant:
+	option = {
+		name = one_v_one_mod.3.mmm.a
+		trigger = { tag = MMM }
+		set_global_flag = mmm_ban_mtb_flag
+		set_global_flag = mmm_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mmm.b
+		trigger = { tag = MMM }
+		set_global_flag = mmm_ban_mtl_flag
+		set_global_flag = mmm_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mmm.c
+		trigger = { tag = MMM }
+		set_global_flag = mmm_ban_mto_flag
+		set_global_flag = mmm_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+	option = {
+		name = one_v_one_mod.3.mmm.e
+		trigger = { tag = MMM }
+		set_global_flag = mmm_ban_mts_flag
+		set_global_flag = mmm_nation_choosing_flag
+		custom_tooltip = one_v_one_go_choose_nation_tt
+	}
+}
+###################
+# Nation choosing:
+country_event = {
+	id = one_v_one_mod.5
+	title = one_v_one_mod.5.t
+	desc = one_v_one_mod.5.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = one_v_one_mod.5.a
+		set_global_flag = ige_ban_ivv_flag
+		set_global_flag = ige_nation_choosing_flag
+	}
+	option = {
+		name = one_v_one_mod.5.b
+		set_global_flag = ige_ban_ivf_flag
+		set_global_flag = ige_nation_choosing_flag
+	}
+	option = {
+		name = one_v_one_mod.5.c
+		set_global_flag = ige_ban_ivt_flag
+		set_global_flag = ige_nation_choosing_flag
+	}
+	option = {
+		name = one_v_one_mod.5.e
+		set_global_flag = ige_ban_ivd_flag
+		set_global_flag = ige_nation_choosing_flag
+	}
+}
+
+###################
+###################
+# Advisor choosing:
+country_event = {
+	id = one_v_one_mod.30
+	title = one_v_one_mod.30.t
+	desc = one_v_one_mod.30.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = one_v_one_mod.30.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+	}
+	option = {
+		name = one_v_one_mod.30.a
+		country_event = { id = one_v_one_mod.31 }
+	}
+	option = {
+		name = one_v_one_mod.30.b
+		country_event = { id = one_v_one_mod.32 }
+	}
+	option = {
+		name = one_v_one_mod.30.c
+		country_event = { id = one_v_one_mod.33 }
+	}
+}
+
+# Adm:
+country_event = {
+	id = one_v_one_mod.31
+	title = one_v_one_mod.31.t
+	desc = one_v_one_mod.30.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = one_v_one_mod.30.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+	}
+	option = {
+		name = one_v_one_mod.30.2
+		hidden_effect = { country_event = { id = one_v_one_mod.30 } }
+	}
+	option = {
+		name = one_v_one_mod.31.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = philosopher
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.2
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = artist
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.3
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = master_of_mint
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.4
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = treasurer
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.5
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = natural_scientist
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.6
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = theologian
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.31.7
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = inquisitor
+			skill = 1
+		}
+		add_treasury = -33
+	}
+}
+# Dip:
+country_event = {
+	id = one_v_one_mod.32
+	title = one_v_one_mod.32.t
+	desc = one_v_one_mod.30.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = one_v_one_mod.30.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+	}
+	option = {
+		name = one_v_one_mod.30.2
+		hidden_effect = { country_event = { id = one_v_one_mod.30 } }
+	}
+	option = {
+		name = one_v_one_mod.32.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = statesman
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.2
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = diplomat
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.3
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = spymaster
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.4
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = trader
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.5
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		trigger = { num_of_colonists = 1 }
+		hire_advisor = {
+			type = colonial_governor
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.6
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		trigger = {
+			num_of_colonists = 1
+			is_colonial_nation = no
+			NOT = { has_reform = trade_company_government }
+		}
+		hire_advisor = {
+			type = navigator
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.32.7
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		trigger = { num_of_ports = 1 }
+		hire_advisor = {
+			type = naval_reformer
+			skill = 1
+		}
+		add_treasury = -33
+	}
+}
+# Mil:
+country_event = {
+	id = one_v_one_mod.33
+	title = one_v_one_mod.33.t
+	desc = one_v_one_mod.30.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = one_v_one_mod.30.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+	}
+	option = {
+		name = one_v_one_mod.30.2
+		hidden_effect = { country_event = { id = one_v_one_mod.30 } }
+	}
+	option = {
+		name = one_v_one_mod.33.1
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = army_reformer
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.2
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = commandant
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.3
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = quartermaster
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.4
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = recruitmaster
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.5
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = army_organiser
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.6
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = grand_captain
+			skill = 1
+		}
+		add_treasury = -33
+	}
+	option = {
+		name = one_v_one_mod.33.7
+		clr_country_flag = one_v_one_get_specific_advisor_flag
+		hire_advisor = {
+			type = fortification_expert
+			skill = 1
+		}
+		add_treasury = -33
+	}
+}
+country_event = { # Religion choosing
+	id = one_v_one_mod.34
+	title = one_v_one_mod.34.t
+	desc = one_v_one_mod.34.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	option = { # Sunni
+		trigger = { OR = { tag = MME tag = MMR } }
+		name = one_v_one_mod.34.a
+		custom_tooltip = one_v_one_mod.34.a.tt
+		hidden_effect = { every_owned_province = { change_religion = sunni } change_religion = sunni set_ruler_religion = sunni }
+		set_country_flag = one_v_one_invite_scholar_flag
+		country_event = { id = muslim_school_events.20 }
+		if = {
+			limit = { tag = MMR }
+			hidden_effect = { change_government = tribal }
+			add_government_reform = tribal_federation
+		}
+	}
+	option = { # Shia
+		trigger = { OR = { tag = MME tag = MMR } }
+		name = one_v_one_mod.34.b
+		custom_tooltip = one_v_one_mod.34.b.tt
+		hidden_effect = { every_owned_province = { change_religion = shiite } change_religion = shiite set_ruler_religion = shiite }
+		set_country_flag = one_v_one_invite_scholar_flag
+		country_event = { id = muslim_school_events.20 }
+		if = {
+			limit = { tag = MMR }
+			hidden_effect = { change_government = monarchy }
+			add_government_reform = feudal_theocracy 
+		}
+	}
+}
+
+country_event = { # Italy
+	id = one_v_one_mod.41
+	title = one_v_one_mod.41.t
+	desc = one_v_one_mod.41.d
+	picture = one_v_one_ita_rules_event_pic
+	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = one_v_one_startup_event } }
+	immediate = { set_country_flag = one_v_one_startup_event }
+	option = { name = one_v_one_mod.41.a highlight = yes country_event = { id = one_v_one_mod.3 } }
+}
+country_event = { # Otto-Mam
+	id = one_v_one_mod.42
+	title = one_v_one_mod.42.t
+	desc = one_v_one_mod.42.d
+	picture = one_v_one_ita_rules_event_pic
+	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = one_v_one_startup_event } }
+	immediate = { set_country_flag = one_v_one_startup_event }
+	option = { name = one_v_one_mod.41.a highlight = yes country_event = { id = one_v_one_mod.3 } }
+}
