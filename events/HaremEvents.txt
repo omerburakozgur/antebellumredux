@@ -340,7 +340,7 @@ country_event = {
 	}
 }
 
-# Kiliç alayi
+# Kiliï¿½ alayi
 country_event = {
 	id = harem_events.2
 	title = harem_events.2.t
@@ -361,9 +361,9 @@ country_event = {
 				dynasty = original_dynasty
 				male = yes
 				age = 25
-				max_random_adm = 6
-				max_random_mil = 6
-				max_random_dip = 6
+				max_random_adm = 3
+				max_random_mil = 3
+				max_random_dip = 3
 			}
 		}
 	}
@@ -376,7 +376,7 @@ country_event = {
 	}
 }
 
-#Sancaga çikma
+#Sancaga ï¿½ikma
 country_event = {
 	id = harem_events.3
 	title = harem_events.3.t

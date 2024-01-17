@@ -22,23 +22,7 @@ on_startup = {
 	emperor = {
 		save_global_event_target_as = Emperor
 	}
-	if = {
-	every_owned_province = {
-		limit = {
-			OR = {
-				owned_by = TIM
-				owned_by = QOM
-				owned_by = MUG
-				owned_by = PER
-			}
-			has_terrain = mountain
-		}
-		add_province_modifier = { 
-		name = matrox_devcost_mountain
-		duration = -1
-		}
-    
-	}
+	
 }
 	if = {
 		limit = {
@@ -4781,16 +4765,6 @@ on_province_owner_change = {
 		add_province_modifier = {
 			name = ottoman_siyasah_tax_reform_manpower
 			duration = -1
-		}
-	}
-	if = {
-		limit = {
-			owned_by = TIM
-			has_terrain = mountain
-		}
-		add_province_modifier = { 
-		name = matrox_devcost
-		duration = -1
 		}
 	}
 }
