@@ -1,76 +1,5 @@
 #When adding effects directly in on_actions always consider if it would be best to do so through a scripted effect. on_actions with a lot of script in them are harder to get an overview of.
 
-#### Dev click counter ###
-
-	every_country = {
-		if = {
-			limit = {
-				check_variable = {
-					which = dev_adm_clicks					
-					value = 1
-				}
-			}
-		}
-		else = {
-			set_variable = {
-				which = dev_adm_clicks
-				value = 0
-			}
-		}
-	}
-	
-	#ARUMBA LINES
-	every_country = {
-		if = {
-			limit = {
-				check_variable = {
-					which = dev_dip_clicks					
-					value = 1
-				}
-			}
-		}
-		else = {
-			set_variable = {
-				which = dev_dip_clicks
-				value = 0
-			}
-		}
-	}
-	
-	every_country = {
-		if = {
-			limit = {
-				check_variable = {
-					which = dev_mil_clicks					
-					value = 1
-				}
-			}
-		}
-		else = {
-			set_variable = {
-				which = dev_mil_clicks
-				value = 0
-			}
-		}
-	}
-	
-	every_country = {
-		if = {
-			limit = {
-				check_variable = {
-					which = dev_sum_clicks					
-					value = 1
-				}
-			}
-		}
-		else = {
-			set_variable = {
-				which = dev_sum_clicks
-				value = 0
-			}
-		}
-	}
-
 # country
 on_startup = {
 	emperor = {
@@ -93,6 +22,7 @@ on_startup = {
 	on_startup_effect = yes
 	on_startup_dlc_cleanup_effect = yes
 	initialize_schools_effect = yes #This is only used here but is used for readability of on_action file.
+	development_counter = { on_startup = yes }
 }
 
 # country
@@ -1780,6 +1710,7 @@ on_adm_development = {
 		add_local_autonomy = -5
 		add_prosperity = 1
 	}
+		development_counter = { adm = yes }
 	if = {
 		limit = {
 			religion = ROOT
@@ -1823,6 +1754,7 @@ on_dip_development = {
 		add_local_autonomy = -5
 		add_prosperity = 1
 	}
+		development_counter = { dip = yes }
 	if = {
 		limit = {
 			religion = ROOT
@@ -1866,6 +1798,7 @@ on_mil_development = {
 		add_local_autonomy = -5
 		add_prosperity = 1
 	}
+		development_counter = { mil = yes }
 	if = {
 		limit = {
 			religion = ROOT
