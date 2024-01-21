@@ -4,6 +4,34 @@
 # Effects are fully scriptable here.
 
 ###########################################
+# Horde Ally Limit
+###########################################
+horde_ai = {
+    potential = {
+        ai = yes
+             }
+    trigger = {
+        ai = yes
+        has_reform = steppe_horde 
+           }
+    diplomatic_upkeep = -1
+}
+
+###########################################
+# Ai Ally Limit
+###########################################
+matrox_ai = {
+    potential = {
+        ai = yes
+             }
+    trigger = {
+        ai = yes
+        NOT = {tag = PAP}
+           }
+    diplomatic_upkeep = -2
+}
+
+###########################################
 # Discovery of the East Indian trade route.
 ###########################################
 east_indian_trade_route = {
