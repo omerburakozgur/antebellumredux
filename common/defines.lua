@@ -357,7 +357,7 @@ NDefines = {
 		ELECTIVE_VICTORY_LEGITIMACY = 10,				-- Legitimacy for getting a heir from your country onto the throne of an elective nation
 	
 		INTEGRATE_UNION_MIN_YEARS = 30,					-- Number of years before a union can be integrated
-		INTEGRATE_VASSAL_MIN_YEARS = 5,				-- Number of years before a vassal can be integrated
+		INTEGRATE_VASSAL_MIN_YEARS = 10,				-- Number of years before a vassal can be integrated
 	
 		MONTHS_BEFORE_TOTAL_OCCUPATION = 12,			-- Before this many months have passed in the war, you cannot gain 100% warscore by just occupying the warleader
 	

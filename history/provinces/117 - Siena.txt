@@ -11,7 +11,7 @@ trade_goods = glass
 base_manpower = 4    
 capital = "Siena" 
 is_city = yes 
-add_core = LAN
+add_core = PAP
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
@@ -42,7 +42,7 @@ discovered_by = ottoman
 	owner = FRA
 	controller = FRA
 	add_core = FRA
-} # The Treaty of Lunéville
+} # The Treaty of Lunï¿½ville
 1801.3.21 = {
 	owner = ETR
 	controller = ETR
